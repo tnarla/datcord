@@ -13,6 +13,7 @@
     "@floating-ui/react-dom-interactions": "^0.9.1",
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.6",
+    "@supabase/supabase-js": "^1.35.4",
     "@tailwindcss/forms": "^0.5.2",
     "boring-avatars": "^1.7.0",
     "class-variance-authority": "^0.2.3",
@@ -20,7 +21,8 @@
     "framer-motion": "^6.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.33.1"
+    "react-hook-form": "^7.33.1",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
