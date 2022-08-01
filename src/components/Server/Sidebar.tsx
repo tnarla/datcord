@@ -1,5 +1,6 @@
 import { ChevronDownIcon, CogIcon } from "@heroicons/react/solid";
 import { useContext } from "react";
+import { Outlet } from "react-router-dom";
 import { AuthContext } from "../../auth/AuthProvider";
 import { AvatarWithStatus } from "../User/AvatarWithStatus";
 import { Account } from "./Account";
@@ -21,15 +22,19 @@ export default function Sidebar() {
   const user = useContext(AuthContext);
 
   return (
-    <div className="flex flex-col relative w-60 h-screen overflow-y-auto bg-gray-800">
-      <div className="flex flex-col px-2">
-        <ServerHeader />
-        <ChannelList />
-      </div>
+    <>
+      <div className="flex flex-col relative w-60 h-screen overflow-y-auto bg-gray-800">
+        <div className="flex flex-col px-2">
+          <ServerHeader />
+          <ChannelList />
+        </div>
 
-      <div className="flex items-center justify-between absolute w-full bottom-0 bg-gray-900 p-2">
-        <Account />
+        <div className="flex items-center justify-between absolute w-full bottom-0 bg-gray-900 p-2">
+          <Account />
+        </div>
       </div>
-    </div>
+      
+      <Outlet />
+    </>
   );
 }
