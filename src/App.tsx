@@ -1,13 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AuthProvider, { AuthContext } from "./auth/AuthProvider";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import AuthProvider from "./auth/AuthProvider";
 import { AuthGate } from "./auth/AuthGate";
 import { SignIn } from "./auth/SignIn";
 import { Channel } from "./components/Server/Channel";
 import Sidebar from "./components/Server/Sidebar";
 import ServerList from "./components/ServerList";
-import { supabase } from "./supabaseClient";
-import { useContext } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Home from "./components/Home";
 
 export const queryClient = new QueryClient();
 
@@ -45,7 +44,9 @@ function SignedIn() {
     <div className="flex">
       <ServerList />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path=":server" element={<Sidebar />}>
+          {/* <Route index element={<Navigate to={`/${lastSeenChannel}`} />} /> */}
           <Route path=":channel" element={<Channel />} />
         </Route>
       </Routes>

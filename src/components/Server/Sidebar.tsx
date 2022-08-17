@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="flex flex-col relative w-60 h-screen overflow-y-auto bg-gray-800">
+      <div className="flex flex-col relative flex-shrink-0 w-60 h-screen overflow-y-auto bg-gray-800">
         <div className="flex flex-col px-2">
           <ServerHeader />
           <ChannelList />
